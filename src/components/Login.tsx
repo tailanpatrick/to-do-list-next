@@ -24,9 +24,9 @@ const Login = () => {
 
     return (
         <div className="login">
-            <Button onClick={handleLoginButton}
-                style={{position: 'relative'}}>
-                <FaGoogle className="icon-google"/> Login com o Google
+            <Button onClick={handleLoginButton}>
+                <FaGoogle className="icon-google"/> 
+                <span style={{fontSize:'17px', zIndex:'1'}}> Login com o Google</span>
             </Button>
         </div>
     );

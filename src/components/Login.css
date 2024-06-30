@@ -1,23 +1,17 @@
 .login {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 100px;
 }
 
 .icon-google {
-    position: absolute;
-    top: 12px;
-    left: 150px;
+    z-index: 9;
+    margin-top: 5px;
 }
 @media(max-width: 600px){
     .login {
         height: 80vh;
         padding-top: 0;
-    }
-
-    .icon-google {
-        position: absolute;
-        top: 11px;
-        left:75px;
     }
 }
