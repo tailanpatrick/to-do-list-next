@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 const Header: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const loggedIn = pb.authStore.isValid;
-  const router = useRouter();
 
   useEffect(() => {
     const fetchUsername = async () => {

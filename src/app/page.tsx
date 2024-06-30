@@ -12,6 +12,7 @@ import { deleteTask } from "@/services/pocketbase/delete-task";
 import Header from "@/components/Header";
 import { getUserId, isLoggedIn } from "@/services/pocketbase/auth";
 
+import './globals.css'
 import "./App.css";
 import Login from "@/components/Login";
 
