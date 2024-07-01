@@ -2,11 +2,17 @@ import pb from "@/lib/pocketbase";
 
 export async function logInWithGoogle() {
     try {
+      
+      const w = window.open();  
+      if(!w){
+        return;
+      }
+      
       pb.authStore.clear()
       const authData = await pb.collection('user').authWithOAuth2({
         provider: 'google',
         urlCallback: (url) => {
-          window.location.href = url
+          w.location.href = url
         }
       })
 
