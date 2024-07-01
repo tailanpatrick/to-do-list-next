@@ -71,8 +71,8 @@ const Home = () => {
     };
 
     try {
-      const createdTask: TaskProps = await createTask(newTask);
-      setTasks(prevTasks => [...prevTasks, createdTask]);
+      setTasks(prevTasks => [...prevTasks, newTask]);
+      await createTask(newTask);
     } catch (error) {
       console.log('Erro ao criar tarefa. Tente novamente mais tarde.');
     }
