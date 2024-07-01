@@ -38,18 +38,24 @@ const Home = () => {
 
   const handleTaskClick = async (taskId: string) => {
     try {
+      let updatedTask = {
+        title: '',
+        completed: false,
+        userId: ''
+      } as TaskProps;
+
       const updatedTasks = await Promise.all(
         tasks.map(async (task) => {
           if (taskId === task.id) {
-            const updatedTask = { ...task, completed: !task.completed };
-            await updateTask(updatedTask);
+            updatedTask = { ...task, completed: !task.completed };
             return updatedTask;
           }
           return task;
         })
       );
-
+      
       setTasks(updatedTasks);
+      await updateTask(updatedTask);
     } catch (error) {
       console.error("Erro ao atualizar tarefa:", error);
       // Trate o erro conforme necessário
